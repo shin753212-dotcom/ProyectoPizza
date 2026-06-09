@@ -1,0 +1,442 @@
+    :root {
+    --color-principal: #d32f2f;   
+    --color-secundario: #ffca28;  /* para los combos */
+    --color-fondo-pagina: #fcf8f2;/* para el fondo general */
+    --color-fondo-card: #fff9f0;  /* para las tarjetas de las pizzas */
+    --color-oscuro: #222222;      /* para el footer y navegación */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo-pagina);
+    color: #333;
+    display: grid;
+    min-height: 100vh;
+    gap: 15px;
+    padding: 15px;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "nav    nav"
+        "aside  main"
+        "footer footer";
+}
+
+
+.header {
+    grid-area: header;
+    background-color: var(--color-principal);
+    color: white;
+    
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+header>div>img {
+    border-radius: 30px;
+    
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    justify-content: right;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav a:hover {
+    color: #ffca28;
+}
+
+.nav a.destacado {
+    background-color: #ffca28;
+    color: #333;
+    border-radius: 4px;
+}
+
+.nav a.destacado:hover {
+    background-color: white;
+}
+
+.main {
+    grid-area: main;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: var(--color-secundario);
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+.subtitulo {
+    margin-top: 25px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: var(--color-fondo-card);
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-top: 10px;
+}
+
+.promo {
+    border-left: 5px solid #ffca28;
+    text-align: left;
+}
+
+.promo-especial {
+    border: 2px dashed #d32f2f;
+    background-color: #fff0f0;
+    text-align: left;
+}
+
+.lista-sucursales {
+    list-style: none;
+}
+
+.lista-sucursales li {
+    margin-bottom: 10px;
+}
+
+.btn-pedidos {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-pedidos:hover {
+    color: white;
+    background-color: var(--color-oscuro);
+}
+
+/* ESTILOS DEL FORMULARIO DE PEDIDOS */
+.main-pedido h2 {
+    color: #d32f2f;
+}
+
+.form-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista-diseño{
+    list-style-type: none;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #d32f2f;
+}
+
+.form-pedido input, .form-pedido select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* OPCION PEDIDO */
+.opciones-pedido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.opcion-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff9f0;
+    position: relative;
+}
+
+.opcion-card input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+}
+
+.opcion-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.opcion-card .info {
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* PIZZA*/
+.opcion-card input:checked + img + .info {
+    color: var(--color-principal);
+}
+
+.opcion-card:has(input:checked) {
+    border-color: var(--color-principal);
+    background-color: #fffae6;
+}
+
+.btn-enviar-pedido {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-enviar-pedido:hover {
+    background-color: var(--color-oscuro);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--color-oscuro);
+    color: white;
+    padding: 30px 20px 10px 20px;
+    border-radius: 8px;
+}
+
+/* MAPA GOOGLE */
+.mapa-contenedor {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 300px;        
+    border-radius: 8px;
+}
+
+/*FOOTER*/
+.footer-contenido {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.columna-footer {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer h3 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+}
+
+.lista-sucursales {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-sucursales li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* ICONOS */
+.redes-sociales {
+    margin: 15px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociales a {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: var(--color-secundario);
+}
+
+/* BOTON Pedir en Línea */
+.btn-pedidos {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444; 
+    margin-top: 20px;
+    padding-top: 15px;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* RESPONSIVO CELULAR */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+}
+
+
+/* Estilos para la sección de tamaños */
+.contenedor-tamanos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.tamano-card {
+    background-color: var(--color-fondo-card);
+    border: 2px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tamano-card h3 {
+    color: var(--color-oscuro);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.tamano-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.tamano-card .precio {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-top: 10px;
+}
+
+
+
+

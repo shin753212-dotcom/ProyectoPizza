@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mendi's. PIZZA | Hacer Pedido</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+     
+    <link rel="stylesheet" href="mypage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div><img src="logo.jpeg" alt="" width="50px" height="auto"></div>
+        <div><h1>Mendi's PIZZA</h1></div>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="mypage.html"><i class="fa-solid fa-utensils"></i>   Menú</a></li>                        
+            <li><a href="pedido.html"><button type="button" class="btn btn-outline-warning"><i class="fa-solid fa-pizza-slice me-2"></i> hacer Pedido</button></a></li>
+            <li><a href="#contacto"><i class="fa-solid fa-address-book"></i>   Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <main class="main main-pedido">
+        <h2 class="fw-bold">Personaliza tu pedido aquí</h2>
+        <form action="#" class="form-pedido" id="formPedido">
+            
+            <fieldset>
+                <legend>Tus Datos</legend>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                <input type="tel" id="celular" placeholder="Ej: 71234567" required>
+                <select id="tipoEntrega" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc;">
+                    <option value="domicilio">🛵 Envío a Domicilio</option>
+                    <option value="sucursal">🏪 Retiro en Sucursal</option>
+                </select>
+                <input type="text" id="direccion" placeholder="Ej: Av. 20 de Octubre #114">
+            </fieldset>
+
+            <fieldset>
+                <legend>Selecciona la Sucursal</legend>
+                <select id="sucursal" required>
+                    <option value="">-- Elige una sucursal para tu pedido --</option>
+                    <option value="centro">Centro - Av. Mariscal Santa Cruz</option>
+                    <option value="prado">El Prado - Av. 16 de Julio</option>
+                    <option value="miraflores">Miraflores - Av. Busch</option>
+                    <option value="sopocachi">Sopocachi - Calle Belisario Salinas</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Elige tu Pizza</legend>
+                <div class="opciones-pedido">
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="pepperoni">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=150" alt="Pepperoni">
+                        <div class="info">
+                            <strong>Pizza Pepperoni</strong>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="fugazza">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=150" alt="Fugazza">
+                        <div class="info">
+                            <strong>Pizza Fugazza</strong>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="hawaiana">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=150" alt="Hawaiana">
+                        <div class="info">
+                            <strong>Pizza Hawaiana</strong>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="vegetariana">
+                        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=150" alt="Vegetariana">
+                        <div class="info">
+                            <strong>Pizza Vegetariana</strong>                        
+                        </div>
+                    </label>
+
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="Mozzarella">
+                        <img src="https://imgs.search.brave.com/zZEL-u5U7wK8oAR1cqnylPVRunx7mCNA1k4FeaeZ8AA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTgv/MjgyLzQwMS9zbWFs/bC9jaGVlc2UtcGl6/emEtd2l0aC1oZXJi/ZWQtY3J1c3QtYW5k/LW1lbHRlZC1tb3p6/YXJlbGxhLWN1dC1v/dXQtZnJlZS1wbmcu/cG5n" alt="Mozzarella">
+                        <div class="info">
+                            <strong>Pizza Mozzarella</strong>
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="Pizza de Pollo y Choclo">
+                        <img src="https://png.pngtree.com/png-vector/20240124/ourmid/pngtree-pizza-with-corn-bacon-chili-onion-pea-png-image_11483576.png" alt="Pizza de Pollo y Choclo">
+                        <div class="info">
+                            <strong>Pizza de Pollo y Choclo</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="jamon">
+                        <img src="https://img.magnific.com/foto-gratis/pizza-hawaiana_1203-2455.jpg?semt=ais_hybrid&w=740&q=80" alt=" Pizza Jamón">
+                        <div class="info">
+                            <strong>Pizza Jamón</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="Napolitana">
+                        <img src="https://img.freepik.com/vector-premium/concepto-ilustracion-vectorial-realista-pizza_1253202-61947.jpg?semt=ais_hybrid&w=740&q=80" alt="Pizza Napolitana">
+                        <div class="info">
+                            <strong>Pizza Napolitana</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="Hot Honey">
+                        <img src="https://beyondthenoms.com/wp-content/uploads/2022/08/Hot-Honey-Pepperoni-Ricotta-Pizza-2.jpg" alt="Pizza Hot Honey">
+                        <div class="info">
+                            <strong>Pizza Hot Honey</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="criolla">
+                        <img src="https://shopexpress.com.co/www/wp-content/uploads/2021/11/criolla.png" alt="Pizza Criolla">
+                        <div class="info">
+                            <strong>Pizza Criolla</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="carnivora">
+                        <img src="https://img.freepik.com/psd-premium/pizza-amantes-carne-salchichas-rodajas-tocino_233250-1882.jpg?semt=ais_hybrid&w=740&q=80" alt="Pizza Carnívora">
+                        <div class="info">
+                            <strong>Pizza Carnívora</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="mexicana">
+                        <img src="https://png.pngtree.com/background/20250128/original/pngtree-mexican-chicken-pizza-with-spicy-sauce-and-veggies-photo-picture-image_14577066.jpg" alt="Pizza Mexicana">
+                        <div class="info">
+                            <strong>Pizza Mexicana</strong>                        
+                        </div>
+                    </label>
+                    
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="barbecue de pollo">
+                        <img src="https://i.pinimg.com/736x/ec/1f/d3/ec1fd366a2a14042715fefeb346f5814.jpg" alt="Pizza Barbecue de Pollo">
+                        <div class="info">
+                            <strong>Pizza Barbecue de Pollo</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="veggie">
+                        <img src="https://imgs.search.brave.com/buWaMq877pR2MCSwiwkGopHc6sq3zASXtei51bYhdno/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9k/ZWxpY2lvdXMtcGl6/emEtc2VydmVkLXdv/b2Rlbi10YWJsZV8y/My0yMTQ3OTI2MDQy/LmpwZz9zZW10PWFp/c19oeWJyaWQmdz03/NDAmcT04MA" alt="Pizza Veggie">
+                        <div class="info">
+                            <strong>Pizza Veggie</strong>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="napolitana">
+                        <img src="https://t4.ftcdn.net/jpg/07/96/55/71/360_F_796557144_9fQnHAqwDvQmOxqzOxMGDKiHtQ29Ghri.jpg" alt="Pizza Napolitana">
+                        <div class="info">
+                            <strong>Pizza Napolitana</strong>
+                            <p><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> FREE-GLUTEN</p>                        
+                        </div>
+                    </label>
+                    <label class="opcion-card">
+                        <input type="checkbox" name="producto[]" value="peperoni">
+                        <img src="https://media.istockphoto.com/id/184928432/es/foto/pizza-de-pepperoni-cheese-superior.jpg?s=612x612&w=0&k=20&c=xs1pkMDuOyb1-dWfvaIhUvOwXml0x2PDYXlBoN2Eht0=" alt="Pizza Peperoni">
+                        <div class="info">
+                            <strong>Pizza Peperoni</strong>
+                            <p><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> FREE-GLUTEN</p>                         
+                        </div>
+                    </label>
+
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Selecciona el tamaño de tu Pizza</legend>
+                <select id="tamanoPizza" required>
+                    <option value="">-- Elige el tamaño de tu pizza --</option>
+                    <option value="combo">No Aplica (Es combo)</option>
+                    <option value="Personal">Pizza Personal PRECIO: Bs. 50</option>
+                    <option value="Mediana">Pizza Mediana PRECIO: Bs. 85</option>
+                    <option value="Familiar">Pizza Familiar PRECIO: Bs. 140</option>        
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Combos del Día</legend>
+                <select name="combo">
+                    <option value="">-- Elige tu combo --</option>
+                    <option value="ninguno">Ningún combo (Solo Pizza)</option>
+                    <option value="lunes-martes">Combo Personal - Lunes y Martes (Bs. 45)</option>
+                    <option value="miercoles">Combo Pequeño - Miércoles (Bs. 75)</option>
+                    <option value="jueves-viernes">Combo Familiar - Jueves y Viernes (Bs. 120)</option>
+                    <option value="sabado-domingo">¡Dúo Pequeño! - Sábado y Domingo (Bs. 150)</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>¿Quieres agregar un Refresco?</legend>
+                <select name="refresco">
+                    <option value="">-- Elige tu refresco --</option>
+                    <option value="ninguno">No, gracias</option>
+                    <option value="coca-cola-500">Coca-Cola 500ml (+ Bs. 7)</option>
+                    <option value="fanta-500">Fanta 500ml (+ Bs. 7)</option>
+                    <option value="sprite-500">Sprite 500ml (+ Bs. 7)</option>
+                    <option value="coca-cola-2">Coca-Cola 2 Litros (+ Bs. 15)</option>
+                    <option value="fanta-2">Fanta 2 Litros (+ Bs. 15)</option>
+                    <option value="sprite-2">Sprite 2 Litros (+ Bs. 15)</option>
+                    <option value="coca-cola-3">Coca-Cola 3 Litros (+ Bs. 20)</option>
+                    <option value="fanta-3">Fanta 3 Litros (+ Bs. 20)</option>
+                    <option value="sprite-3">Sprite 3 Litros (+ Bs. 20)</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Método de Pago</legend>
+                <select id="metodoPago" required>
+                    <option value="">-- El pago se realiza al recibir la pizza --</option>
+                    <option value="efectivo">💵 Efectivo al recibir</option>
+                    <option value="qr"> QR Simple</option>
+                    <option value="tigo">📱 Tigo Money</option>
+                    <option value="tarjeta">💳 Tarjeta de Crédito/Débito</option>
+                </select>
+            </fieldset>
+
+            <button type="submit" class="btn-enviar-pedido">Confirmar Pedido</button>
+        </form>
+    </main>
+
+    <aside class="aside">
+        <h3 class="fw-bold">Tu Orden</h3>
+        <p>Revisa bien tus datos antes de enviar. Si elegiste una sucursal, recibirás un mensaje para confirmar el tiempo de preparación.</p>
+        <hr>
+        <p><strong class="fw-bold">Aceptamos pagos en:</strong></p>
+        <ul class="lista-diseño">
+            <li><i class="fa-solid fa-money-bill-1-wave"></i> Efectivo al recibir</li><br>
+            <li><i class="fa-solid fa-qrcode"></i> QR Simple</li> <br>
+            <li><i class="fa-solid fa-wallet"></i> Tigo Money</li> <br>
+            <li><i class="fa-solid fa-credit-card"></i> Pagos en tarjeta</li> <br>
+        </ul>
+        <img src="agradecimiento.png" alt="gracias por tu compra" width="280px" height="auto">
+        <br>
+        <section class="seccion-tamanos" id="tamanos">
+            <h2 class="text-center fw-bold my-4">Nuestros Tamaños de Pizza</h2>
+            <div class="contenedor-tamanos">
+                
+                <div class="tamano-card">
+                    <h3>🍕 Pizza Personal</h3>
+                    <p><strong>Porciones:</strong> 1 - 2 Porciones</p>
+                    <p><strong>(18 cm)</strong></p>
+                    <p class="precio"> Bs. 50</p>
+                </div>
+
+                <div class="tamano-card">
+                    <h3>🍕 Pizza Mediana</h3>
+                    <p><strong>Porciones:</strong> 4 - 6 Porciones</p>
+                    <p><strong>(30 cm)</strong></p>
+                    <p class="precio"> Bs. 85</p>
+                </div>
+
+                <div class="tamano-card">
+                    <h3>🍕 Pizza Familiar</h3>
+                    <p><strong>Porciones:</strong> 8 - 10 Porciones</p>
+                    <p><strong>(45 cm)</strong></p>
+                    <p class="precio"> Bs. 140</p>
+                </div>
+
+            </div>
+        </section>
+    </aside>
+
+<footer class="footer">
+    <div id="contacto">
+        <div class="footer-contenido">
+            <div class="columna-footer">
+                <h3>Nuestras Sucursales (La Paz)</h3>
+                <p>Visítanos en el centro de la ciudad:</p> <br>
+                <ul class="lista-sucursales">
+                    <li><strong>Centro - Av. Mariscal Santa Cruz:</strong> Esq. Calle Ayacucho.</li>
+                    <li><strong>El Prado - Av. 16 de Julio:</strong> Frente a la Fuente de Neptuno.</li>
+                    <li><strong>Miraflores:</strong> Av. Busch, cerca de la Plaza Villarroel.</li>
+                    <li><strong>Sopocachi:</strong> Calle Belisario Salinas, esq. Presbítero Medina.</li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Horarios de Atención</h3>
+                <p><strong>Lunes a Viernes:</strong> 10:00 am - 21:00 pm</p>
+                <p><strong>Sábados y Domingos:</strong> 9:00 am - 20:00 pm</p>
+                <p><strong>Feriados:</strong> 9:00 am - 22:00 pm</p>
+                
+                <div class="redes-sociales">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>                
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Mendi's PIZZA - Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById('formPedido').addEventListener('submit', function(event) {        
+        event.preventDefault();
+        
+        const nombreInput = document.getElementById('nombre');
+        const celularInput = document.getElementById('celular');
+        const direccionInput = document.getElementById('direccion');
+
+        const regexNombre = /^[A-ZÁÉÍÓÚÑ][a-záéíóúñA-ZÁÉÍÓÚÑ\s]*$/;
+        const regexCelular = /^[0-9]{8}$/;
+        const regexDireccion = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s,#.-]+$/;
+
+        const tipoEntregaSelect = document.getElementById('tipoEntrega');
+        const tipoEntregaValor = tipoEntregaSelect.value;
+        const tipoEntregaTexto = tipoEntregaSelect.options[tipoEntregaSelect.selectedIndex].text;
+
+        // CORREGIDO: Llamadas seguras mediante IDs asignados
+        const sucursalSelect = document.getElementById('sucursal');
+        const sucursalTexto = sucursalSelect.options[sucursalSelect.selectedIndex].text;
+        
+        const tamañoSelect = document.getElementById('tamanoPizza');
+        const tamañoTexto = tamañoSelect.options[tamañoSelect.selectedIndex].text;
+
+        const comboSelect = document.getElementsByName('combo')[0];
+        const comboValor = comboSelect.value;
+        const comboTexto = comboSelect.options[comboSelect.selectedIndex].text;
+
+        const refrescoSelect = document.getElementsByName('refresco')[0];
+        const refrescoTexto = refrescoSelect.options[refrescoSelect.selectedIndex].text;
+        const pizzasMarcadas = document.querySelectorAll('input[name="producto[]"]:checked');
+
+        const pagoSelect = document.getElementById('metodoPago');
+        const pagoTexto = pagoSelect.options[pagoSelect.selectedIndex].text;
+
+        // Validación Nombre
+        if (!regexNombre.test(nombreInput.value.trim())) {
+            Swal.fire({
+                title: 'Nombre es Inválido',
+                text: 'El nombre solo debe contener letras y comenzar obligatoriamente con una letra Mayúscula.',
+                icon: 'error',
+                confirmButtonColor: 'var(--color-principal)',
+            });
+            return;
+        }
+
+        // Validación Celular
+        if (!regexCelular.test(celularInput.value.trim())) {
+            Swal.fire({
+                title: 'Número de Celular Inválido',
+                text: 'El número de celular debe contener exactamente 8 dígitos.',
+                icon: 'error',
+                confirmButtonColor: 'var(--color-principal)'
+            });
+            return;
+        }
+
+        // Validación Dirección Condicional
+        if (tipoEntregaValor === "domicilio") {
+            const direccionTexto = direccionInput.value.trim();
+            if (direccionTexto === "") {
+                Swal.fire({ title: 'Dirección Requerida', text: 'Por favor introduce la dirección de tu casa para realizar el envío.', icon: 'warning', confirmButtonColor: 'var(--color-principal)' });
+                return;
+            }
+            if (!regexDireccion.test(direccionTexto)) {
+                Swal.fire({ title: 'Dirección Inválida', text: 'La dirección solo permite letras, números, espacios y los caracteres , . # o -', icon: 'error', confirmButtonColor: 'var(--color-principal)' });
+                return;
+            }
+            if (direccionTexto.length < 5) {
+                Swal.fire({ title: 'Dirección Incompleta', text: 'Escribe una dirección de entrega más detallada (mínimo 5 caracteres).', icon: 'error', confirmButtonColor: 'var(--color-principal)' });
+                return;
+            }
+        }
+
+        // Validación de Comida Inteligente (Si no hay combo, obliga a marcar pizza)
+        if ((comboValor === "ninguno" || comboValor === "") && pizzasMarcadas.length === 0) {
+            Swal.fire({ 
+                title: 'Selecciona tu comida', 
+                text: 'Por favor, elige al menos una pizza o selecciona un Combo del Día para continuar.', 
+                icon: 'warning', 
+                confirmButtonColor: 'var(--color-principal)' 
+            });
+            return;
+        }
+
+        // Listar Pizzas Elegidas
+        let textoPizzas = "Ninguna (Solo Combo)";
+        if (pizzasMarcadas.length > 0) {
+            let listaPizzas = [];
+            pizzasMarcadas.forEach(pizza => {
+                let nombreFormateado = pizza.value.charAt(0).toUpperCase() + pizza.value.slice(1);
+                listaPizzas.push("Pizza " + nombreFormateado);
+            });
+            textoPizzas = listaPizzas.join(', ');
+        }
+
+        // Formatear Dirección final para la confirmación
+        let direccionFinalResumen = direccionInput.value.trim();
+        if (tipoEntregaValor === "sucursal") {
+            direccionFinalResumen = "❌ No aplica (Retira en Sucursal)";
+        }
+
+        // Mostrar Resumen del pedido
+        Swal.fire({
+            title: 'Este es tu pedido',
+            icon: 'info',
+            html: `
+                <div style="text-align: left; background: #fff9f0; padding: 15px; border-radius: 8px; border: 1px solid #ffca28; font-size: 0.95rem;">
+                    <p><strong>👤 Cliente:</strong> ${nombreInput.value.trim()}</p>
+                    <p><strong>📱 Celular:</strong> ${celularInput.value.trim()}</p>
+                    <p><strong>🛵 Tipo de Entrega:</strong> ${tipoEntregaTexto}</p>
+                    <p><strong>📍 Dirección:</strong> ${direccionFinalResumen}</p>
+                    <p><strong>🏪 Sucursal:</strong> ${sucursalTexto}</p>
+                    <p><strong>💳 Método de Pago:</strong> ${pagoTexto}</p>
+                    <hr style="border-top: 1px dashed #ccc;">
+                    <p><strong>🍕 Comida / Pizza(s):</strong> ${textoPizzas}</p>
+                    <p><strong>📐 Tamaño Base:</strong> ${tamañoTexto}</p>
+                    <p><strong>🎁 Combo Especial:</strong> ${comboTexto || 'Ninguno'}</p>
+                    <p><strong>🥤 Bebida Adicional:</strong> ${refrescoTexto || 'Ninguna'}</p>
+                </div>
+                <p style="margin-top: 15px; font-weight: bold;">¿Los datos son correctos?</p>
+            `,
+            showCancelButton: true,
+            confirmButtonColor: 'var(--color-principal)',  
+            cancelButtonColor: 'var(--color-secundario)',   
+            confirmButtonText: '¡Sí, confirmar pedido!',
+            cancelButtonText: 'Modificar algo'
+        }).then((result) => {            
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¡Pedido Confirmado!',
+                    text: 'Tu orden ha sido recibida con éxito. Nos comunicaremos contigo para coordinar la entrega.',
+                    icon: 'success',
+                    confirmButtonColor: 'var(--color-principal)',
+                    confirmButtonText: '¡Excelente, a esperar la pizza!'
+                });                
+                document.getElementById('formPedido').reset();
+            }
+        });        
+    });
+</script>
+</body>
+</html>
